@@ -16,6 +16,7 @@ def fakultaet(n):
         result = result * i
     return result
 print(fakultaet(5))
+
 # Aufg. 3c)
 from math import factorial
 print(factorial(5))
