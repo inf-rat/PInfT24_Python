@@ -1,6 +1,6 @@
 # Funktionsdefinitionen
-def verschiebung(zeichen, schluessel):
-    zahl = ord(zeichen)
+def verschiebung(buchstabe, schluessel):
+    zahl = ord(buchstabe)
     neueZahl = zahl + schluessel
     if neueZahl > 90:
         neueZahl -= 26
@@ -11,11 +11,13 @@ def verschiebung(zeichen, schluessel):
 
 def verschluesselung(text, schluessel):
     result = ""
-    for zeichen in text:
-        result += verschiebung(zeichen, schluessel)
+    for buchstabe in text:
+        result += verschiebung(buchstabe, schluessel)
     return result
 
+def entschluesselung(text, schluessel):
+    return verschluesselung(text, -schluessel)
 
 # Funktionsaufrufe
 print(verschluesselung('ASTERIX', 3))
-print(verschluesselung('DVWHULA', -3))
+print(entschluesselung('DVWHULA', 3))
