@@ -53,7 +53,7 @@ print("Test Bubblesort:")
 test_list1 = make_rand_list(6, 0, 99)
 print("sortiert:   ", test_list1)
 bubblesort(test_list1)
-print("unsortiert: ", test_list1, "\n")
+print("unsortiert: ", test_list1)
 
 # Test Selection-Sort:
 print("\nTest Selection-Sort:")
