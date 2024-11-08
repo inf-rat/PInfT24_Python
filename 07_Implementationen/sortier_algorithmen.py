@@ -23,6 +23,17 @@ def bubblesort(lst):
                 swap(lst, j, j+1)
         n -= 1
 
+def bubblesort_optimized(lst):
+    n = len(lst)
+    while n > 1:
+        ordered = True
+        for j in range(0, n - 1):
+            if lst[j] > lst[j+1]:
+                swap(lst, j, j+1)
+                ordered = False
+        if ordered: break
+        n -= 1
+
 def selection_sort(lst):
     LU = lst.copy()
     LS = []
@@ -55,16 +66,23 @@ print("sortiert:   ", test_list1)
 bubblesort(test_list1)
 print("unsortiert: ", test_list1)
 
-# Test Selection-Sort:
-print("\nTest Selection-Sort:")
+# Test optimierter Bubblesort:
+print("\nTest optimierter Bubblesort:")
 test_list2 = make_rand_list(6, 0, 99)
 print("sortiert:   ", test_list2)
-sorted_list = selection_sort(test_list2)
+bubblesort_optimized(test_list2)
+print("unsortiert: ", test_list2)
+
+# Test Selection-Sort:
+print("\nTest Selection-Sort:")
+test_list3 = make_rand_list(6, 0, 99)
+print("sortiert:   ", test_list3)
+sorted_list = selection_sort(test_list3)
 print("unsortiert: ", sorted_list)
 
 # Test Selection-Sort in place:
 print("\nTest Selection-Sort in place:")
-test_list3 = make_rand_list(6, 0, 99)
-print("sortiert:   ", test_list3)
-selection_sort_inplace(test_list3)
-print("unsortiert: ", test_list3)
+test_list4 = make_rand_list(6, 0, 99)
+print("sortiert:   ", test_list4)
+selection_sort_inplace(test_list4)
+print("unsortiert: ", test_list4)
